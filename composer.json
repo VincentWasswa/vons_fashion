@@ -25,10 +25,12 @@
         "drupal/belgrade": "^2.0@beta",
         "drupal/bootstrap_barrio": "^5.5",
         "drupal/commerce": "^2.30",
+        "drupal/commerce_stripe": "^1.0@RC",
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0@stable",
         "drupal/gin": "^3.0@beta",
         "drupal/guardr_core": "^2.0",
+        "drupal/newslettersignup": "^3.1",
         "drush/drush": "^11.0",
         "mediacurrent/mis_profile": "^2.0",
         "mediacurrent/rain": "^4.0",
@@ -54,7 +56,6 @@
     "conflict": {
         "drupal/drupal": "*",
         "drupal/ctools": "^3.10"
-
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -79,7 +80,9 @@
         ]
     },
     "autoload-dev": {
-        "files": ["load.environment.php"]
+        "files": [
+            "load.environment.php"
+        ]
     },
     "scripts": {
         "robo": "$(pwd)/bin/robo --ansi --load-from $(pwd)/scripts",
@@ -105,14 +108,32 @@
             }
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
         }
     }
 }
